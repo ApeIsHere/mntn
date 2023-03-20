@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Chronicle Display';
+    font-display: swap;
+    src: local('ChronicleDisplay-SemiBold'),
+        url('../fonts/ChronicleDisplay/ChronicleDisplay-SemiBold.woff2') format('woff2'),
+        url('../fonts/ChronicleDisplay/ChronicleDisplay-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-display: swap;
+    src: local('Gilroy-Regular-400'),
+        url('../fonts/Gilroy/Gilroy-Regular-400.woff2') format('woff2'),
+        url('../fonts/Gilroy/Gilroy-Regular-400.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-display: swap;
+    src: local('Gilroy-Medium-500'),
+        url('../fonts/Gilroy/Gilroy-Medium-500.woff2') format('woff2'),
+        url('../fonts/Gilroy/Gilroy-Medium-500.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-display: swap;
+    src: local('Gilroy-Bold-700'),
+        url('../fonts/Gilroy/Gilroy-Bold-700.woff2') format('woff2'),
+        url('../fonts/Gilroy/Gilroy-Bold-700.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-display: swap;
+    src: local('Gilroy-ExtraBold-800'),
+        url('../fonts/Gilroy/Gilroy-ExtraBold-800.woff2') format('woff2'),
+        url('../fonts/Gilroy/Gilroy-ExtraBold-800.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}

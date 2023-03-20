@@ -1,0 +1,32 @@
+.sidenav {
+    position: fixed;
+    top: 326px;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    z-index: 10;
+    &__item {
+        padding-right: 35px;
+        height: 60px;
+        position: relative;
+        text-decoration: none !important;
+        color: white;
+        line-height: 60px;
+        opacity: 0.8;
+        &:hover{
+            color: var(--main-color);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: white;
+            opacity: 0.3;
+
+        }
+    }
+}

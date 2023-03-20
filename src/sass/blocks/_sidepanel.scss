@@ -1,0 +1,34 @@
+.sidepanel  {
+    position: fixed;
+    top: 359px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 173px;
+    z-index: 3;
+    &__link {
+        &_instagram {
+            &:hover {
+                svg path {
+                    fill: var(--main-color);
+                }
+            }
+        }
+        &_twitter {
+            &:hover {
+                svg path {
+                    fill: var(--main-color);
+                }
+            }
+        }
+    }
+    &__text {
+        height: 77px;
+        span{
+            display: block;
+            transform: rotate(90deg) translateX(33%);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.title {
+    position: relative;
+    padding-left: 96px;
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 6px;
+    &::before {
+        content: '';
+        width: 72px;
+        height: 2px;
+        background: var(--main-color);
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+}
