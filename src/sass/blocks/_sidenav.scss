@@ -29,4 +29,12 @@
 
         }
     }
+    .active {
+        opacity: 1;
+        color: var(--main-color);
+        text-decoration: wavy;
+        &::after {
+            opacity: 1;
+        }
+    }
 }

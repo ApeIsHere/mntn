@@ -55,7 +55,7 @@
 <body>
     
     <aside class="sidenav">
-        <a href="#first-screen" class="sidenav__item">Start</a>
+        <a href="#first-screen" class="sidenav__item active">Start</a>
         <a href="#get-started" class="sidenav__item">1</a>
         <a href="#essentials" class="sidenav__item">2</a>
         <a href="#key" class="sidenav__item">3</a>
@@ -76,7 +76,7 @@
     </aside>
 
     <div class="parallax">
-        <div class="parallax__wrapper">
+        <div class="parallax__wrapper" data-section="1">
             <img src="img/first-screen/bcg.png" class="background background-1">
             <img src="img/first-screen/main-top.png" class="background background-2">
             <img src="img/first-screen/main-bot.png"class="background background-3">
@@ -109,7 +109,7 @@
                         <h1 class="subtitle first-screen__subtitle">
                             Be Prepared For The Mountains And Beyond!
                         </h1>
-                        <a href="#" class="first-screen__down">
+                        <a href="#get-started" class="first-screen__down">
                             <span>scroll down</span>
                             <img src="icons/first-screen/arrow_down.svg" alt="down">
                         </a>
@@ -118,7 +118,7 @@
             </section>
         </div>
         
-        <section class="get-started" id="get-started">
+        <section class="get-started" id="get-started" data-section="2">
             <div class="container">
                 <div class="article__wrapper">
                     <div class="article__text">
@@ -139,7 +139,7 @@
             </div>
         </section>
     
-        <section class="essentials" id="essentials">
+        <section class="essentials" id="essentials" data-section="3">
             <div class="container">
                 <div class="article__wrapper">
                     <div class="article__text">
@@ -160,7 +160,7 @@
             </div>
         </section>
     
-        <section class="key" id="key">
+        <section class="key" id="key" data-section="4">
             <div class="container">
                 <div class="article__wrapper">
                     <div class="article__text">
@@ -211,10 +211,7 @@
         </footer>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
