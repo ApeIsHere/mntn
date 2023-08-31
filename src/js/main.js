@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         positionsTop = [],
         positionsBot = [];
     let nextLogIndex = 0,
-        isChanged = false,
         isClicked = false;
 
     sections.forEach((section, i) => {
@@ -20,16 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //--------------------------------------------   Side-nav-animation
-    function changeActiveNavItem(index) {
+    function changeActiveNavItem(index = 0) {
         const items = document.querySelectorAll('.sidenav__item');
-
 
         items.forEach(item => {
             item.addEventListener('click', () => {
                 items.forEach(item => {
-                    isClicked = true;
                     item.classList.remove('active');
                 });
+
+                isClicked = true;
                 item.classList.add('active');
 
                 setTimeout(() => {
@@ -37,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 800);
             });
 
+            // this handles scrolling event class toggles
             if (!isClicked && index >= 0) {
                 item.classList.remove('active');
                 items[index].classList.add('active');
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     changeActiveNavItem();
 
     parallaxContainer.addEventListener('scroll', () => {
-        if(!isClicked) {
             const offset = parallaxContainer.scrollTop,
                   botOfViewport = window.innerHeight * .75,
                   topOfViewport = window.innerHeight * .25;
@@ -70,30 +69,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Up');
                 console.log(`Position: ${positionsBot[nextLogIndex]}, NextIndex: ${nextLogIndex}, Offset: ${offset}`);
             }
-        }
     });
 
-    //--------------------------------------------   Slide the blocks in and out
+    //--------------------------------------------   Slide the blocks in
 
-    const articleItems = document.querySelectorAll('.article__text, .article__img');
+    const articleItems = document.querySelectorAll('[data-block]');
 
-    articleItems.forEach((item, i) => {
-        item.style.display = 'none';
+    articleItems.forEach((item) => {
         item.classList.add('animate__animated');
-        
-        if(i % 2 == 0) {
-            item.classList.add('animate__fadeInLeft');
-        } else {
-            item.classList.add('animate__fadeInRight');
-        }
     });
     
     function animateArticles (index) {
         if (index > 0) {
             index = index * 2;
-            articleItems[index-2].style.display = 'flex';
-            articleItems[index-1].style.display = 'flex';
+            articleItems[index-2].style.visibility = 'visible';
+            checkSide(articleItems[index-2]);
+
+            articleItems[index-1].style.visibility = 'visible';
+            checkSide(articleItems[index-1]);
         }
+
+        function checkSide(element) {
+            switch (element.getAttribute('data-block')) {
+                case 'left':
+                    element.classList.add('animate__fadeInLeft');
+                    break;
+                case 'right':
+                    element.classList.add('animate__fadeInRight');
+                    break;
+            }
+        }
+
     }
 });
 

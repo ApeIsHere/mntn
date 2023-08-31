@@ -5,6 +5,7 @@
         gap: 114px;
     }
     &__text {
+        visibility: hidden;
         padding-left: 150px;
         position: relative;
         padding-top: 140px;
@@ -34,5 +35,8 @@
             --d: 100%;
             margin-right: 10px;
         }
+    }
+    &__img {
+        visibility: hidden;
     }
 }
