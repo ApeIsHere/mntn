@@ -1,45 +1,28 @@
 .mobilemenu {
     display: none;
-    .menu {
-        margin-bottom: 0;
-        display: flex;
-        list-style-type: none;
-        gap: 40px;
-        &__item {
-            color: white;
-            text-decoration: none;
-            padding: 8px;
-            border-radius:12px;
-            border: 2px solid var(--main-color);
-            -webkit-mask:
-              linear-gradient(#fff 0 0) top   /var(--d,0%) 5px,
-              linear-gradient(#fff 0 0) bottom/var(--d,0%) 5px,
-              linear-gradient(#fff 0 0) left  /5px var(--d,0%),
-              linear-gradient(#fff 0 0) right /5px var(--d,0%),
-              linear-gradient(#fff 0 0) center /calc(100% - 12px) calc(100% - 12px);
-            -webkit-mask-repeat:no-repeat;
-            transition: 0.5s;
-            &:hover {
-                --d:100%;
-              }
-        }    
-    }
-    .login {
-        text-decoration: none;
-        color: white;
-        padding: 8px;
-        border-radius:12px;
-        border: 2px solid var(--main-color);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) top   /var(--d,0%) 5px,
-            linear-gradient(#fff 0 0) bottom/var(--d,0%) 5px,
-            linear-gradient(#fff 0 0) left  /5px var(--d,0%),
-            linear-gradient(#fff 0 0) right /5px var(--d,0%),
-            linear-gradient(#fff 0 0) center /calc(100% - 12px) calc(100% - 12px);
-        -webkit-mask-repeat:no-repeat;
-        transition: 0.5s;
-        &:hover {
-            --d:100%;
+
+    nav {
+        ul {
+            margin-bottom: 0;
+            display: flex;
+            list-style-type: none;
+            gap: 40px;
+            li {
+                a {
+                    color: white;
+                    padding: 8px;
+                }
+            }
         }
     }
+
+    &__login {
+        color: white;
+        padding: 8px;
+    }
+
+    .hamburger {
+        display: none;
+    }
 }
+

@@ -1,0 +1,39 @@
+@media (max-width: 1440px) {
+    .background {
+        &-3 {
+            left: 15%;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .background {
+        &-3 {
+            left: 25%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .background {
+        &-3 {
+            left: 35%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .background {
+        &-3 {
+            left: 45%;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .background {
+        &-3 {
+            left: 60%;
+        }
+    }
+}
