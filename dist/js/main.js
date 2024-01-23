@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
     //--------------------------------------------   Side-nav-animation
     function changeActiveNavItem(index = 0) {
         const items = document.querySelectorAll('.sidenav__item');
@@ -57,8 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 changeActiveNavItem(nextLogIndex);
                 animateArticles(nextLogIndex);
                 console.log('Down');
-                console.log(`Position: ${positionsTop[nextLogIndex]}, NextIndex: ${nextLogIndex}, Offset: ${offset}`);
-                
+                console.log(`Position: ${positionsTop[nextLogIndex]}, NextIndex: ${nextLogIndex}, Offset: ${offset}`);               
             }
     
             // Check if the bottom of the section reaches the middle of the viewport when scrolling up
@@ -99,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
             }
         }
-
     }
 });
 

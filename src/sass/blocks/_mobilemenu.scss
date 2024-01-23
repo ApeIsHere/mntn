@@ -1,15 +1,5 @@
-header {
-    position: absolute;
-    padding: 64px 80px 0 80px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+.mobilemenu {
+    display: none;
     .menu {
         margin-bottom: 0;
         display: flex;

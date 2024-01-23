@@ -25,6 +25,7 @@ body {
 
 @import 'blocks/parallax';
 @import 'blocks/menu';
+@import 'blocks/mobilemenu';
 @import 'blocks/sidepanel';
 @import 'blocks/sidenav';
 @import 'blocks/title';
@@ -36,6 +37,7 @@ body {
 @import 'blocks/key';
 @import 'blocks/footer';
 @import 'media/menu-media';
+@import 'media/mobilemenu-media';
 @import 'media/article-media';
 @import 'media/first-screen-media';
 @import 'media/get-started-media';
