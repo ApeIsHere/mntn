@@ -1,6 +1,9 @@
 "use strict";
 
+import hamburger from "./modules/hamburger";
+
 document.addEventListener('DOMContentLoaded', () => {
+    hamburger();
 
 
 //--------------------------------------------   Changing Active Navigation according to scrolling
