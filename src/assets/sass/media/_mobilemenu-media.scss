@@ -36,9 +36,10 @@
 
                 .menu__item {
                     &_icons {
-                        display: none;
+                        margin-top: 10px;
+                        visibility: hidden;
                         &-active {
-                            display: block;
+                            visibility: visible;
                         }
                     }
                 }

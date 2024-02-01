@@ -95,12 +95,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+/* harmony import */ var _modules_openMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/openMenu */ "./src/js/modules/openMenu.js");
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_modules_openMenu__WEBPACK_IMPORTED_MODULE_0__["default"])('.hamburger', '.mobilemenu', true, true);
+  Object(_modules_openMenu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_socials', '.menu__item_icons');
 
   //--------------------------------------------   Changing Active Navigation according to scrolling
   const parallaxContainer = document.querySelector('.parallax'),
@@ -190,27 +191,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/hamburger.js":
-/*!*************************************!*\
-  !*** ./src/js/modules/hamburger.js ***!
-  \*************************************/
+/***/ "./src/js/modules/openMenu.js":
+/*!************************************!*\
+  !*** ./src/js/modules/openMenu.js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const hamburger = () => {
-  const hamburger = document.querySelector('.hamburger'),
-    menu = document.querySelector('.mobilemenu'),
-    lines = hamburger.querySelectorAll('span');
+const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
+  const trigger = document.querySelector(triggerSelector),
+    menu = document.querySelector(menuSelector),
+    lines = trigger.querySelectorAll('span');
   let isOpen = false;
+  let isSocialOpen = false;
   const toggleMenu = () => {
-    isOpen = !isOpen;
-    menu.classList.toggle('mobilemenu-active');
+    if (isOpenMatters) {
+      isOpen = !isOpen;
+    } else if (isSocialOpen) {
+      isSocialOpen = !isSocialOpen;
+      menu.classList.remove('animate__fadeInDown');
+      menu.classList.add('animate__fadeOutUp');
+    } else {
+      menu.classList.remove('animate__fadeOutUp');
+      menu.classList.add('animate__fadeInDown');
+      isSocialOpen = !isSocialOpen;
+    }
+    menu.classList.toggle(`${menuSelector.substring(1)}-active`);
   };
   const closemenu = () => {
-    isOpen = !isOpen;
-    menu.classList.remove('mobilemenu-active');
+    if (isOpenMatters) {
+      isOpen = !isOpen;
+    }
+    menu.classList.remove(`${menuSelector.substring(1)}-active`);
   };
   const animateHamburger = () => {
     const angle = isOpen ? 45 : 0,
@@ -224,15 +238,19 @@ const hamburger = () => {
   window.addEventListener('click', e => {
     if (isOpen && !menu.contains(e.target)) {
       closemenu();
+      if (isAnimated) {
+        animateHamburger();
+      }
+    }
+  });
+  trigger.addEventListener('click', () => {
+    toggleMenu();
+    if (isAnimated) {
       animateHamburger();
     }
   });
-  hamburger.addEventListener('click', () => {
-    toggleMenu();
-    animateHamburger();
-  });
 };
-/* harmony default export */ __webpack_exports__["default"] = (hamburger);
+/* harmony default export */ __webpack_exports__["default"] = (openMenu);
 
 /***/ })
 

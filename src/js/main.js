@@ -1,9 +1,18 @@
 "use strict";
 
-import hamburger from "./modules/hamburger";
+import openMenu from "./modules/openMenu";
 
 document.addEventListener('DOMContentLoaded', () => {
-    hamburger();
+    openMenu(
+        '.hamburger',
+        '.mobilemenu',
+        true,
+        true
+    );
+    openMenu(
+        '.menu__item_socials',
+        '.menu__item_icons'
+    );
 
 
 //--------------------------------------------   Changing Active Navigation according to scrolling
