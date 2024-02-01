@@ -1,7 +1,7 @@
 .sidepanel  {
     position: fixed;
     top: 359px;
-    left: 40px;
+    left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,6 +29,9 @@
         span{
             display: block;
             transform: rotate(90deg) translateX(33%);
+            strong {
+                font-size: 18px;
+            }
         }
     }
 }

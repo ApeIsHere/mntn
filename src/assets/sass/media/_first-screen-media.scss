@@ -1,11 +1,18 @@
-@media (max-width: 1440px) {}
+@media (max-width: 1440px) {
+    .first-screen {
+        &__subtitle {
+            font-size: 70px !important;
+            line-height: 80px !important;
+        }
+    }
+}
 
 @media (max-width: 1200px) {
     .first-screen {
         &__subtitle {
             padding: 25px 0;
-            font-size: 70px;
-            line-height: 80px;
+            font-size: 64px !important;
+            line-height: 75px !important;
         }
     }
 }
@@ -13,8 +20,8 @@
 @media (max-width: 992px) {
     .first-screen {
         &__subtitle {
-            font-size: 60px;
-            line-height: 70px;
+            font-size: 60px !important;
+            line-height: 70px !important;
         }
     }
 }
@@ -22,8 +29,8 @@
 @media (max-width: 768px) {
     .first-screen {
         &__subtitle {
-            font-size: 50px;
-            line-height: 60px;
+            font-size: 50px !important;
+            line-height: 60px !important;
         }
 
         .title {
@@ -39,8 +46,8 @@
 @media (max-width: 576px) {
     .first-screen {
         &__subtitle {
-            font-size: 36px;
-            line-height: 50px;
+            font-size: 40px !important;
+            line-height: 50px !important;
         }
         &__wrapper {
             padding-top: 190px;
@@ -48,7 +55,7 @@
 
         .title {
             padding-left: 50px;
-            font-size: 12px;
+            font-size: 14px;
             letter-spacing: 3px;
 
             &::before {

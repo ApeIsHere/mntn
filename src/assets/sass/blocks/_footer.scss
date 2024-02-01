@@ -2,11 +2,9 @@
     margin-top: 200px;
     &__wrapper {
         height: 280px;
-        display: flex;
-        justify-content: space-between;
-        :first-child {
-            margin-right: 30%;
-        }
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        align-items: center;
     }
     &__item {
         max-width: 300px;

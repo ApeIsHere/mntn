@@ -4,39 +4,53 @@
         justify-content: space-between;
         gap: 114px;
     }
+
     &__text {
         visibility: hidden;
-        padding-left: 150px;
+        padding-left: 120px;
         position: relative;
         padding-top: 140px;
         display: flex;
         flex-direction: column;
         gap: 27px;
+        flex: 1;
     }
+
     &__number {
         position: absolute;
         top: 3%;
         left: 0;
         font-size: 240px;
+        font-weight: 700;
         line-height: 240px;
         opacity: 0.2;
     }
+
     &__read {
         display: flex;
         gap: 20px;
         text-decoration: none !important;
+
         span {
             color: var(--main-color);
             background: linear-gradient(var(--main-color) 0 0) 0 100% /var(--d, 0) 2px no-repeat;
-            transition:0.5s;
+            transition: 0.5s;
         }
+
         &:hover span {
             text-decoration: none;
             --d: 100%;
             margin-right: 10px;
         }
     }
+
     &__img {
         visibility: hidden;
+        flex: 2;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
     }
 }

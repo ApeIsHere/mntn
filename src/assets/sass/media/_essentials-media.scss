@@ -1,0 +1,21 @@
+@media (max-width: 1440px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {
+    .essentials {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .essentials {
+        margin-top: 140px;
+
+        .article__wrapper {
+            flex-direction: column;
+        }
+    }
+}

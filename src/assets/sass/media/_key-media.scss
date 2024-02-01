@@ -5,9 +5,13 @@
 @media (max-width: 992px) {}
 
 @media (max-width: 768px) {
-    .sidepanel {
-        left: -100%;
+    .key {
+        margin-top: 100px;
     }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .key {
+        margin-top: 140px;
+    }
+}
