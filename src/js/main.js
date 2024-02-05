@@ -1,6 +1,7 @@
 "use strict";
 
 import openMenu from "./modules/openMenu";
+import modals from "./modules/modals";
 
 document.addEventListener('DOMContentLoaded', () => {
     openMenu(
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.menu__item_socials',
         '.menu__item_icons'
     );
+    modals();
 
 
 //--------------------------------------------   Changing Active Navigation according to scrolling

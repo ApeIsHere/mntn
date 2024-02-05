@@ -1,0 +1,73 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .4);
+
+    &__wrapper {
+        box-sizing: content-box;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 40px;
+        width: 550px;
+        height: 300px;
+        background-color: rgba(0, 0, 0, .8);
+        border-radius: 20px;
+    }
+
+    &-close {
+        position: absolute;
+        top: -2rem;
+        right: -1rem;
+        font-size: 4rem;
+        line-height: 2rem;
+        background: transparent;
+        color: var(--main-color);
+        border: none;
+    }
+
+    .title {
+        text-align: center;
+        padding: 0  0;
+        &::before {
+            display: none;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: start;
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 10px;
+        label {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        input {
+            padding-left: 10px;
+            color: #000;
+        }
+    }
+
+    &__button {
+        align-self: center;
+        margin-top: 30px;
+        background-color: var(--main-color);
+        color: black;
+        width: 150px;
+        height: 35px;
+        border-radius: 8px;
+    }
+}
+

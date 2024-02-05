@@ -4,6 +4,7 @@
     overflow-x: hidden;
     perspective: 10px;
     scroll-behavior: smooth;
+    transition: none;
     &__wrapper {
         position: relative;
         display: flex;
