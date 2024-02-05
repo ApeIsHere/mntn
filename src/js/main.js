@@ -2,19 +2,23 @@
 
 import openMenu from "./modules/openMenu";
 import modals from "./modules/modals";
+import forms from "./modules/form";
 
 document.addEventListener('DOMContentLoaded', () => {
     openMenu(
         '.hamburger',
         '.mobilemenu',
+        '.mobilemenu__login',
         true,
         true
     );
     openMenu(
         '.menu__item_socials',
-        '.menu__item_icons'
+        '.menu__item_icons',
+        '.mobilemenu__login'
     );
     modals();
+    forms();
 
 
 //--------------------------------------------   Changing Active Navigation according to scrolling

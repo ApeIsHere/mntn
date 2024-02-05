@@ -19,6 +19,9 @@
         &__wrapper {
             width: 350px;
         }
+        form {
+            margin-top: 0;
+        }
     }
 }
 
@@ -26,6 +29,9 @@
     .popup {
         &__wrapper {
             width: 65%;
+        }
+        &__button {
+            margin-top: 15px;
         }
     }
 }

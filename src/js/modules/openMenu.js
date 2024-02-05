@@ -1,6 +1,7 @@
-const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
+const openMenu = (triggerSelector, menuSelector, loginSelector, isAnimated, isOpenMatters) => {
     const trigger = document.querySelector(triggerSelector),
         menu = document.querySelector(menuSelector),
+        loginBtn = document.querySelector(loginSelector),
         lines = trigger.querySelectorAll('span');
 
     let isOpen = false;
@@ -9,7 +10,7 @@ const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
     const toggleMenu = () => {
         if (isOpenMatters) {
             isOpen = !isOpen;
-        } else if (isSocialOpen){
+        } else if (isSocialOpen) {
             isSocialOpen = !isSocialOpen;
 
             menu.classList.remove('animate__fadeInDown');
@@ -23,8 +24,8 @@ const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
         menu.classList.toggle(`${menuSelector.substring(1)}-active`);
     };
 
-    const closemenu = () => {
-        if (isOpenMatters) {isOpen = !isOpen;}
+    const closeMenu = () => {
+        if (isOpenMatters) { isOpen = !isOpen; }
 
         menu.classList.remove(`${menuSelector.substring(1)}-active`);
     };
@@ -41,15 +42,20 @@ const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
 
     window.addEventListener('click', (e) => {
         if (isOpen && !menu.contains(e.target)) {
-            closemenu();
-            if (isAnimated) {animateHamburger();}
+            closeMenu();
+            if (isAnimated) { animateHamburger() }
         }
     })
 
     trigger.addEventListener('click', () => {
         toggleMenu();
-        if (isAnimated) {animateHamburger();}
+        if (isAnimated) { animateHamburger() }
     })
+
+    loginBtn.addEventListener('click', () => {
+        closeMenu();
+        if (isAnimated) { animateHamburger() }
+    });
 }
 
 export default openMenu;

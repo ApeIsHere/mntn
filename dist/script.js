@@ -97,14 +97,17 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_openMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/openMenu */ "./src/js/modules/openMenu.js");
 /* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modals */ "./src/js/modules/modals.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  Object(_modules_openMenu__WEBPACK_IMPORTED_MODULE_0__["default"])('.hamburger', '.mobilemenu', true, true);
-  Object(_modules_openMenu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_socials', '.menu__item_icons');
+  Object(_modules_openMenu__WEBPACK_IMPORTED_MODULE_0__["default"])('.hamburger', '.mobilemenu', '.mobilemenu__login', true, true);
+  Object(_modules_openMenu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_socials', '.menu__item_icons', '.mobilemenu__login');
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_modules_form__WEBPACK_IMPORTED_MODULE_2__["default"])();
 
   //--------------------------------------------   Changing Active Navigation according to scrolling
   const parallaxContainer = document.querySelector('.parallax'),
@@ -194,6 +197,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /***/ }),
 
+/***/ "./src/js/modules/form.js":
+/*!********************************!*\
+  !*** ./src/js/modules/form.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const forms = () => {
+  const forms = document.querySelectorAll('form'),
+    inputs = document.querySelectorAll('input'),
+    server = 'assets/server.php';
+  const message = {
+    loading: 'Loading...',
+    login: "Log-in success",
+    failure: 'Something went wrong...',
+    spinner: 'assets/icons/form/spinner.gif',
+    ok: 'assets/icons/form/ok.png',
+    fail: 'assets/icons/form/fail.png'
+  };
+  const clearInputs = () => {
+    inputs.forEach(input => input.value = '');
+  };
+  const postData = async (url, data) => {
+    let res = await fetch(url, {
+      method: 'POST',
+      body: data
+    });
+    if (!res.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return await res.text();
+  };
+  const animateStatus = item => {
+    item.classList.add('animate__animated', 'animate__fadeIn');
+    setTimeout(() => {
+      item.classList.remove('animate__fadeIn');
+      item.classList.add('animate__fadeOut');
+      setTimeout(() => {
+        item.style.display = 'none';
+      }, 800);
+    }, 3000);
+  };
+  const showBtnImg = (parent, src, alt) => {
+    const img = document.createElement('img');
+    img.style.width = '30px';
+    img.src = src;
+    img.alt = alt;
+    parent.innerHTML = '';
+    animateStatus(img);
+    parent.appendChild(img);
+  };
+  forms.forEach(form => {
+    const button = form.querySelector('button'),
+      oldValue = button.innerHTML;
+    let modalMessage;
+    if (form.closest('.popup')) {
+      modalMessage = document.createElement('div');
+      modalMessage.classList.add('title');
+      modalMessage.style.marginTop = '10px';
+      form.appendChild(modalMessage);
+    }
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      showBtnImg(button, message.spinner, message.loading);
+      modalMessage.textContent = message.loading;
+      modalMessage.style.display = 'block';
+      postData(server, formData).then(res => {
+        showBtnImg(button, message.ok, 'ok');
+        modalMessage.textContent = message.login;
+        modalMessage.style.display = 'block';
+        console.log(res);
+      }).catch(() => {
+        showBtnImg(button, message.fail, 'fail');
+        modalMessage.textContent = message.failure;
+        modalMessage.style.display = 'block';
+      }).finally(() => {
+        setTimeout(() => {
+          clearInputs();
+          button.innerHTML = oldValue;
+          modalMessage.style.display = 'none';
+        }, 3800);
+      });
+    });
+  });
+};
+/* harmony default export */ __webpack_exports__["default"] = (forms);
+
+/***/ }),
+
 /***/ "./src/js/modules/modals.js":
 /*!**********************************!*\
   !*** ./src/js/modules/modals.js ***!
@@ -273,9 +368,10 @@ const modals = () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
+const openMenu = (triggerSelector, menuSelector, loginSelector, isAnimated, isOpenMatters) => {
   const trigger = document.querySelector(triggerSelector),
     menu = document.querySelector(menuSelector),
+    loginBtn = document.querySelector(loginSelector),
     lines = trigger.querySelectorAll('span');
   let isOpen = false;
   let isSocialOpen = false;
@@ -293,7 +389,7 @@ const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
     }
     menu.classList.toggle(`${menuSelector.substring(1)}-active`);
   };
-  const closemenu = () => {
+  const closeMenu = () => {
     if (isOpenMatters) {
       isOpen = !isOpen;
     }
@@ -310,7 +406,7 @@ const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
   };
   window.addEventListener('click', e => {
     if (isOpen && !menu.contains(e.target)) {
-      closemenu();
+      closeMenu();
       if (isAnimated) {
         animateHamburger();
       }
@@ -318,6 +414,12 @@ const openMenu = (triggerSelector, menuSelector, isAnimated, isOpenMatters) => {
   });
   trigger.addEventListener('click', () => {
     toggleMenu();
+    if (isAnimated) {
+      animateHamburger();
+    }
+  });
+  loginBtn.addEventListener('click', () => {
+    closeMenu();
     if (isAnimated) {
       animateHamburger();
     }
