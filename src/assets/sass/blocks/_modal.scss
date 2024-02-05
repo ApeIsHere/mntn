@@ -67,6 +67,10 @@
         width: 150px;
         height: 35px;
         border-radius: 8px;
+        &:hover {
+            background-color: #494949;
+            color: var(--main-color);
+        }
     }
 }
 
