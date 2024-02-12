@@ -6,6 +6,7 @@ import forms from "./modules/form";
 import navigatePage from "./modules/navigation";
 
 document.addEventListener('DOMContentLoaded', () => {
+    //hamburger
     openMenu(
         '.hamburger',
         '.mobilemenu',
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         true,
         true
     );
+    //socials in mobile menu
     openMenu(
         '.menu__item_socials',
         '.menu__item_icons',
