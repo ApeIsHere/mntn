@@ -1,56 +1,55 @@
-@import 'libs/bootstrap-reboot.min';
-@import 'base/fonts';
-@import 'base/variables';
-@import 'base/mixins';
-@import '../css/animate.css';
+@import "libs/bootstrap-reboot.min";
+@import "base/fonts";
+@import "base/variables";
+@import "base/mixins";
+@import "../css/animate.css";
 
 * {
-    font-family: 'Gilroy', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: white;
-    margin: 0;
-    padding: 0;
-    transition: all .6s;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  transition: all 0.6s;
 }
 
 body {
-    background-color: #0B1D26;
+  background-color: #0b1d26;
 }
 
 .container {
-    width: 1462px;
-    margin: 0 auto;
+  width: 1462px;
+  margin: 0 auto;
 }
 
-@import 'blocks/article';
-@import 'blocks/essenitials';
-@import 'blocks/first-screen';
-@import 'blocks/footer';
-@import 'blocks/get-started';
-@import 'blocks/key';
-@import 'blocks/menu';
-@import 'blocks/mobilemenu';
-@import 'blocks/modal';
-@import 'blocks/parallax';
-@import 'blocks/sidenav';
-@import 'blocks/sidepanel';
-@import 'blocks/subtitle';
-@import 'blocks/title';
+@import "blocks/article";
+@import "blocks/essenitials";
+@import "blocks/first-screen";
+@import "blocks/footer";
+@import "blocks/get-started";
+@import "blocks/key";
+@import "blocks/menu";
+@import "blocks/mobilemenu";
+@import "blocks/modal";
+@import "blocks/parallax";
+@import "blocks/sidenav";
+@import "blocks/sidepanel";
+@import "blocks/subtitle";
+@import "blocks/title";
 
 // media queries
-@import 'media/article-media';
-@import 'media/container-media';
-@import 'media/essentials-media';
-@import 'media/first-screen-media';
-@import 'media/footer-media';
-@import 'media/get-started-media';
-@import 'media/key-media';
-@import 'media/menu-media';
-@import 'media/mobilemenu-media';
-@import 'media/modal-media';
-@import 'media/parallax-media';
-@import 'media/sidenav-media';
-@import 'media/sidepanel-media';
-@import 'media/subtitle-media';
-@import 'media/title-media';
+@import "media/article-media";
+@import "media/container-media";
+@import "media/essentials-media";
+@import "media/first-screen-media";
+@import "media/footer-media";
+@import "media/get-started-media";
+@import "media/key-media";
+@import "media/menu-media";
+@import "media/mobilemenu-media";
+@import "media/modal-media";
+@import "media/sidenav-media";
+@import "media/sidepanel-media";
+@import "media/subtitle-media";
+@import "media/title-media";
